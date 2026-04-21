@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PUBS Burial Society</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #f1f5f9;
+}
+
+/* HEADER */
+header {
+  background: #000;
+  padding: 15px 20px;
+  border-bottom: 2px solid #22c55e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+}
+
+.logo-box img {
+  height: 60px;
+  margin-right: 10px;
+}
+
+.logo-text h1 {
+  margin: 0;
+  color: #facc15;
+}
+
+.logo-text p {
+  margin: 0;
+  color: #22c55e;
+  font-size: 14px;
+}
+
+/* NAV */
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #f97316;
+}
+
+/* HERO (GIF BACKGROUND) */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* OVERLAY */
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hero-overlay img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.hero-overlay h1 {
+  color: #facc15;
+  font-size: 2.5rem;
+}
+
+.hero-overlay p {
+  color: #22c55e;
+}
+
+/* SECTION */
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  color: #facc15;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+/* CARDS */
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid #22c55e;
+  transition: 0.3s;
+}
+
+.card:hover {
+  border-left: 5px solid #f97316;
+}
+
+/* FORM */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  padding: 12px 20px;
+  background: #f97316;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ea580c;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #22c55e;
+  background: #000;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-box">
+    <img src="logo.jpg" alt="PUBS Logo">
+    <div class="logo-text">
+      <h1>PUBS</h1>
+      <p>Pimville United Brothers & Sisters</p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#benefits">Benefits</a>
+    <a href="#join">Join</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO WITH GIF -->
+<section class="hero">
+
+  <img src="hero.gif" alt="PUBS Community" class="hero-gif">
+
+  <div class="hero-overlay">
+    
+    <h1>Unity • Dignity • Support</h1>
+    <p>Standing together when it matters most</p>
+  </div>
+
+</section>
+
+<section id="about" class="section">
+  <h2>About PUBS</h2>
+  <p>
+    PUBS (Pimville United Brothers & Sisters) is a community-based burial society
+    dedicated to providing financial and emotional support during times of loss.
+  </p>
+</section>
+
+<section id="benefits" class="section">
+  <h2>Membership Benefits</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Funeral Cover</h3>
+      <p>Financial assistance for dignified burials.</p>
+    </div>
+    <div class="card">
+      <h3>Family Support</h3>
+      <p>Support for loved ones.</p>
+    </div>
+    <div class="card">
+      <h3>Community Unity</h3>
+      <p>Strong support network.</p>
+    </div>
+    <div class="card">
+      <h3>Affordable Contributions</h3>
+      <p>Accessible to all members.</p>
+    </div>
+  </div>
+</section>
+
+<section id="join" class="section">
+  <h2>Join PUBS</h2>
+  <div class="card">
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Full Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="email" placeholder="Email Address" required>
+      <button type="submit">Apply Now</button>
+    </form>
+    <p id="msg"></p>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <p>📍 Pimville, Soweto</p>
+  <p>📞 012 345 6789</p>
+  <p>📧 pubs@email.com</p>
+</section>
+
+<footer>
+  <p>© 2026 PUBS Burial Society</p>
+</footer>
+
+<script>
+function submitForm(e){
+  e.preventDefault();
+  document.getElementById("msg").innerText =
+    "Thank you. Your application has been received.";
+}
+</script>
+
+</body>
+</html>
